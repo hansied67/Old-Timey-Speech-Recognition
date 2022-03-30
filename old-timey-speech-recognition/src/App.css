@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "Silent Film";
+  src: local("nickelodeon-regular"),
+    url("./fonts/nickelodeon-regular.ttf") format("truetype");
+}

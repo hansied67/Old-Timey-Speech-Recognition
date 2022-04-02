@@ -14,7 +14,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
+  background: url("https://images.squarespace-cdn.com/content/v1/5ab43e2c96e76f77f5028a53/1521927701322-SKLIYPHDLER5F0VVMQGZ/DE8742C1-2ED5-4BF0-BB4A-A197AB27A70F.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

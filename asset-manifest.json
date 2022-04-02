@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/old-timey-speech-recognition/static/css/main.8ffd667d.css",
-    "main.js": "/old-timey-speech-recognition/static/js/main.f2f30c2b.js",
-    "static/js/787.0cb810d3.chunk.js": "/old-timey-speech-recognition/static/js/787.0cb810d3.chunk.js",
-    "static/media/nickelodeon-regular.ttf": "/old-timey-speech-recognition/static/media/nickelodeon-regular.471a3d3d6a01663c53d1.ttf",
-    "index.html": "/old-timey-speech-recognition/index.html",
-    "main.8ffd667d.css.map": "/old-timey-speech-recognition/static/css/main.8ffd667d.css.map",
-    "main.f2f30c2b.js.map": "/old-timey-speech-recognition/static/js/main.f2f30c2b.js.map",
-    "787.0cb810d3.chunk.js.map": "/old-timey-speech-recognition/static/js/787.0cb810d3.chunk.js.map"
+    "main.css": "/Old-Timey-Speech-Recognition/static/css/main.5677c00f.css",
+    "main.js": "/Old-Timey-Speech-Recognition/static/js/main.ee2553e0.js",
+    "static/js/787.0cb810d3.chunk.js": "/Old-Timey-Speech-Recognition/static/js/787.0cb810d3.chunk.js",
+    "static/media/nickelodeon-regular.ttf": "/Old-Timey-Speech-Recognition/static/media/nickelodeon-regular.471a3d3d6a01663c53d1.ttf",
+    "index.html": "/Old-Timey-Speech-Recognition/index.html",
+    "main.5677c00f.css.map": "/Old-Timey-Speech-Recognition/static/css/main.5677c00f.css.map",
+    "main.ee2553e0.js.map": "/Old-Timey-Speech-Recognition/static/js/main.ee2553e0.js.map",
+    "787.0cb810d3.chunk.js.map": "/Old-Timey-Speech-Recognition/static/js/787.0cb810d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ffd667d.css",
-    "static/js/main.f2f30c2b.js"
+    "static/css/main.5677c00f.css",
+    "static/js/main.ee2553e0.js"
   ]
 }

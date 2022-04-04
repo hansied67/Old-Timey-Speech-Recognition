@@ -2,7 +2,7 @@ import Dictaphone from './components/Dictaphone';
 import './App.css';
 import { GlobalHotKeys } from 'react-hotkeys';
 
-const keyMap = { LISTEN: "PageUp", STOP: "PageDown", };
+const keyMap = { LISTEN: "t" };
 
 function App() {
   return (

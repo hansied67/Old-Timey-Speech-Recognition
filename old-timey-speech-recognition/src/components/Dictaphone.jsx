@@ -3,29 +3,33 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { GlobalHotKeys } from "react-hotkeys";
 
 const Dictaphone = () => {
+  const [listening, setListening] = React.useState(false);
+
   const {
     transcript,
-    //listening,
-    //resetTranscript,
+    //listening - listenToggle can't listen to this easily so states are the way to go
+    resetTranscript,
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
-  const listenVoice = React.useCallback(() => {
-    console.log("listening...");
-    SpeechRecognition.startListening();
-  }, []);
+  const listenToggle = React.useCallback(() => {
+    setListening((listening) => !listening);
+  }, [setListening]);
 
-  const stopListening = React.useCallback(() => {
-    console.log("stopping...");
-    SpeechRecognition.stopListening();
-  }, []);
+  React.useEffect(() => {
+    if (listening) {
+      resetTranscript();
+      console.log("listening..." + listening);
+      SpeechRecognition.startListening({continuous: true});
+    } else {
+      console.log("stopping..." + listening);
+      SpeechRecognition.stopListening();
+    }
+  }, [listening, resetTranscript]);
 
   const handlers = {
-    LISTEN: listenVoice,
-    STOP: stopListening
+    LISTEN: listenToggle
   };
-
-  const instructions = "Press PageUp to Listen";
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -33,11 +37,8 @@ const Dictaphone = () => {
   return (
     <GlobalHotKeys handlers={handlers}>
       <div>
-        {/*<p>Microphone: {listening ? 'on' : 'off'}</p>
-        <button onClick={SpeechRecognition.startListening}>Start</button>
-        <button onClick={SpeechRecognition.stopListening}>Stop</button>
-        <button onClick={resetTranscript}>Reset</button>*/}
-        <p style={{fontSize: 200, fontFamily: "Silent Film", padding: 50}}>{transcript.length > 0 ? transcript : instructions}</p>
+        {transcript.length > 0 ? <div contentEditable style={{fontSize: 200, fontFamily: "Silent Film", padding: 50}}>{transcript}</div> : <div contentEditable></div>}
+        <p>{listening ? 'Microphone on\n(\'T\' to stop listening)' : (transcript.length > 0 ? '' : 'Press \'T\' to start listening!')}</p>
       </div>
     </GlobalHotKeys>
   );

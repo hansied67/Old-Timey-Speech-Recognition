@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { GlobalHotKeys } from "react-hotkeys";
 
 const Dictaphone = () => {
-  const [listening, setListening] = React.useState(false);
+  const [listening, setListening] = useState(false);
 
   const {
     transcript,

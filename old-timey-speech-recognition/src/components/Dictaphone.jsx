@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { GlobalHotKeys } from "react-hotkeys";
 
 const Dictaphone = () => {
-  const [listening, setListening] = useState(false);
+  const [listening, setListening] = useState(false);  // initial state, starts as false
 
   const {
     transcript,
@@ -12,11 +12,11 @@ const Dictaphone = () => {
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
-  const listenToggle = React.useCallback(() => {
+  const listenToggle = useCallback(() => {
     setListening((listening) => !listening);
   }, [setListening]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (listening) {
       resetTranscript();
       console.log("listening..." + listening);
